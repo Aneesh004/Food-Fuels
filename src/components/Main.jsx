@@ -78,47 +78,47 @@ function Main() {
     // Data for Nutritional Values Bar Chart
     const nutrientData = nutrients
         ? {
-              labels: [
-                  'Carbohydrates (g)',
-                  'Cholesterol (mg)',
-                  'Saturated Fat (g)',
-                  'Total Fat (g)',
-                  'Fiber (g)',
-                  'Potassium (mg)',
-                  'Protein (g)',
-                  'Sodium (mg)',
-                  'Sugar (g)',
-              ],
-              datasets: [
-                  {
-                      label: 'Nutritional Values',
-                      data: [
-                          nutrients.carbohydrates_total_g,
-                          nutrients.cholesterol_mg /1000,
-                          nutrients.fat_saturated_g,
-                          nutrients.fat_total_g,
-                          nutrients.fiber_g,
-                          nutrients.potassium_mg /1000,
-                          nutrients.protein_g,
-                          nutrients.sodium_mg /1000,
-                          nutrients.sugar_g,
-                      ],
-                      backgroundColor: [
-                          'rgba(75, 192, 192, 0.6)',
-                          'rgba(255, 159, 64, 0.6)',
-                          'rgba(255, 205, 86, 0.6)',
-                          'rgba(54, 162, 235, 0.6)',
-                          'rgba(153, 102, 255, 0.6)',
-                          'rgba(201, 203, 207, 0.6)',
-                          'rgba(255, 99, 132, 0.6)',
-                          'rgba(75, 192, 192, 0.6)',
-                          'rgba(54, 162, 235, 0.6)',
-                      ],
-                      borderColor: 'rgba(75, 192, 192, 1)',
-                      borderWidth: 1,
-                  },
-              ],
-          }
+            labels: [
+                'Carbohydrates (g)',
+                'Cholesterol (mg)',
+                'Saturated Fat (g)',
+                'Total Fat (g)',
+                'Fiber (g)',
+                'Potassium (mg)',
+                'Protein (g)',
+                'Sodium (mg)',
+                'Sugar (g)',
+            ],
+            datasets: [
+                {
+                    label: 'Nutritional Values',
+                    data: [
+                        nutrients.carbohydrates_total_g,
+                        nutrients.cholesterol_mg / 1000,
+                        nutrients.fat_saturated_g,
+                        nutrients.fat_total_g,
+                        nutrients.fiber_g,
+                        nutrients.potassium_mg / 1000,
+                        nutrients.protein_g,
+                        nutrients.sodium_mg / 1000,
+                        nutrients.sugar_g,
+                    ],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 205, 86, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(201, 203, 207, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                    ],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                },
+            ],
+        }
         : {};
 
     return (
@@ -285,32 +285,35 @@ function Main() {
 
             {/* Bar Chart Section */}
             {nutrients && (
-                <div className="w-full max-w-4xl mt-8">
-                    <div className="bg-white shadow-lg p-8 rounded-lg">
-                        <h2 className="text-3xl font-bold mb-6 text-black">Nutritional Chart</h2>
-                        <Bar
-                            data={nutrientData}
-                            options={{
-                                responsive: true,
-                                plugins: {
-                                    legend: {
-                                        position: 'top',
+                <div className="w-full max-w-4xl mt-8 px-4 sm:px-6 lg:px-8">
+                    <div className="bg-white shadow-lg p-4 sm:p-6 lg:p-8 rounded-lg hidden lg:block">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-black">Nutritional Chart</h2>
+                        <div>
+                            <Bar
+                                data={nutrientData}
+                                options={{
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Nutritional Values (per 100 grams)',
+                                        },
                                     },
-                                    title: {
-                                        display: true,
-                                        text: 'Nutritional Values (per 100 grams)',
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                        },
                                     },
-                                },
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                    },
-                                },
-                            }}
-                        />
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             )}
+
 
             {searched && food && !loading && !error && (
                 <div className="font-semibold mt-12 text-center text-black">
