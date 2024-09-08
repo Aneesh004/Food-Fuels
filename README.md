@@ -1,8 +1,2 @@
-# React + Vite
+**Fuel Focus** is a calories-tracking app designed to help users make informed choices about their food intake. The app provides detailed nutritional values for various food items, including calories per 100 grams. Users can dynamically input food quantities to receive updated nutritional information, helping them stay aware of their dietary habits. With a sleek, user-friendly interface styled using Tailwind CSS and DaisyUI, Fuel Focus offers a seamless experience for anyone looking to monitor their nutrition.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
