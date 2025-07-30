@@ -173,11 +173,8 @@ function Main() {
             <div className="text-center mb-12">
                 <h1 className="text-6xl font-extrabold text-green-900 mb-4">Fuel Focus</h1>
                 <p className="text-lg font-semibold text-black max-w-4xl mx-auto">
-                    Welcome to Fuel Focus, your ultimate companion for tracking and understanding the nutritional value of your food.
-                    Our platform offers an easy way to find out the calorie content and detailed nutritional information of various
-                    food items. With our intuitive search tool, you can quickly discover how many calories are in your favorite foods
-                    and get personalized recommendations on how to balance your intake through different exercises. Start exploring
-                    now to fuel your health and fitness journey with accurate and insightful data.
+                    Welcome to Fuel Focus, where data informs decision. Access detailed nutritional profiles for any food, and receive thoughtful suggestions for healthier alternatives and recipes.
+                    Eat smarter, not Harder!
                 </p>
             </div>
 
