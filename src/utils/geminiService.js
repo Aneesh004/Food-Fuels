@@ -9,7 +9,7 @@ export const generateFoodRecommendations = async (searchedFood, nutritionalData)
 
 Generate exactly 6 healthier food alternatives (NO recipes, only simple whole foods or common food items). Include options relevant to Indian cuisine.
 
-Each object must have: name (string), calories (number), protein (number), carbs (number), fat (number), description (string - why this is healthier than ${searchedFood}), healthTip (string - a short practical health tip about this food, e.g. "Best eaten in the morning for sustained energy").
+Each object must have: name (string), calories (number), protein (number), carbs (number), fat (number), description (string - why this is healthier than ${searchedFood}).
 
 Respond ONLY with the JSON array. No markdown, no explanation. Start with [ and end with ].`;
 
