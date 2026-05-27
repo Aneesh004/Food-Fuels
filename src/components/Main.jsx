@@ -274,48 +274,36 @@ function Main() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {recommendations.map((rec, index) => (
                                     <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
-                                        <div className="flex items-start justify-between mb-3">
+                                        <div className="mb-3">
                                             <h3 className="text-lg font-semibold text-black">{rec.name}</h3>
-                                            {rec.isRecipe && (
-                                                <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Recipe</span>
-                                            )}
                                         </div>
 
-                                        {rec.isRecipe ? (
-                                            <div>
-                                                <p className="text-sm text-gray-600 mb-3">{rec.description}</p>
-                                                <div className="text-sm text-gray-700 mb-2">
-                                                    <span className="font-semibold">Ingredients:</span>
-                                                    <ul className="mt-1 ml-4 list-disc">
-                                                        {rec.ingredients && rec.ingredients.map((ingredient, i) => (
-                                                            <li key={i}>{ingredient}</li>
-                                                        ))}
-                                                    </ul>
+                                        <div>
+                                            <p className="text-sm text-gray-600 mb-3">{rec.description}</p>
+                                            <div className="grid grid-cols-4 gap-2 text-xs mb-3">
+                                                <div className="text-center p-2 bg-green-100 rounded">
+                                                    <span className="font-semibold text-green-800">{rec.calories}</span>
+                                                    <div className="text-green-600">cal</div>
                                                 </div>
-                                                <div className="flex justify-between text-xs text-gray-500">
-                                                    <span>⏱️ {rec.prepTime}</span>
-                                                    <span>📊 {rec.difficulty}</span>
+                                                <div className="text-center p-2 bg-blue-100 rounded">
+                                                    <span className="font-semibold text-blue-800">{rec.protein}g</span>
+                                                    <div className="text-blue-600">protein</div>
                                                 </div>
-                                            </div>
-                                        ) : (
-                                            <div>
-                                                <p className="text-sm text-gray-600 mb-3">{rec.description}</p>
-                                                <div className="grid grid-cols-3 gap-2 text-xs">
-                                                    <div className="text-center p-2 bg-green-100 rounded">
-                                                        <span className="font-semibold text-green-800">{rec.calories}</span>
-                                                        <div className="text-green-600">cal</div>
-                                                    </div>
-                                                    <div className="text-center p-2 bg-blue-100 rounded">
-                                                        <span className="font-semibold text-blue-800">{rec.protein}g</span>
-                                                        <div className="text-blue-600">protein</div>
-                                                    </div>
-                                                    <div className="text-center p-2 bg-yellow-100 rounded">
-                                                        <span className="font-semibold text-yellow-800">{rec.carbs}g</span>
-                                                        <div className="text-yellow-600">carbs</div>
-                                                    </div>
+                                                <div className="text-center p-2 bg-yellow-100 rounded">
+                                                    <span className="font-semibold text-yellow-800">{rec.carbs}g</span>
+                                                    <div className="text-yellow-600">carbs</div>
+                                                </div>
+                                                <div className="text-center p-2 bg-red-100 rounded">
+                                                    <span className="font-semibold text-red-800">{rec.fat}g</span>
+                                                    <div className="text-red-600">fat</div>
                                                 </div>
                                             </div>
-                                        )}
+                                            {rec.healthTip && (
+                                                <div className="bg-green-50 border border-green-200 rounded p-2 text-xs text-green-700">
+                                                    <span className="font-semibold">💡 Tip:</span> {rec.healthTip}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 ))}
                             </div>
